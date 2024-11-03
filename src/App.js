@@ -2,6 +2,7 @@ import './App.css';
 import { Main } from './Main/Main';
 import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 import { Scanner } from './Scanner/Scanner';
+import { InputData } from './Scanner/InputData';
 
 const router = createBrowserRouter([
   {
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
   {
     path:"/scanner",
     element:<Scanner/>
+  },
+  {
+    path:"/inputdata",
+    element:<InputData/>
   },
 ])
 function App() {
