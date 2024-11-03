@@ -20,6 +20,11 @@ export const FindTable = () =>{
                         </td>
                         <td >
                             <div className="form-group">
+                                <input type="number" style={{ width: '130px' }}/>
+                            </div>
+                        </td>
+                        <td >
+                            <div className="form-group">
                                 <input type="date"/>
                             </div>
                         </td>

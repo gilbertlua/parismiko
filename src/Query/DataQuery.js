@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore"; 
+import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore"; 
 
 const firebaseConfig = {
   apiKey: "AIzaSyDmZOH1o77pWmKSspm7rT4m_A4qyGXjb-Q",
@@ -22,6 +22,17 @@ export async function GetItems() {
             id:doc.id, ...doc.data()
         }
     ))
-    console.log(itemList)
-    return itemList()
+    return itemList
+}
+
+export async function AddData(newItem){
+    const itemsRef = collection(db,"items")
+    await addDoc(itemsRef, {
+        merk: newItem.merk,
+        price: parseFloat(newItem.price),
+        updated_date: newItem.updated_date,
+        created_date: newItem.created_date,
+        name: newItem.name,
+        barcode: newItem.barcode
+    })
 }
